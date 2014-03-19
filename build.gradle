@@ -4,7 +4,7 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.0.RC1")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.0.RC4")
     }
 }
 
@@ -15,7 +15,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 
 jar {
-    baseName = 'gs-rest-service'
+    baseName = 'boot-rest-service-spock'
     version =  '0.1.0'
 }
 
@@ -26,15 +26,15 @@ repositories {
 
 dependencies {
     compile("com.fasterxml.jackson.core:jackson-databind")
-    compile("org.springframework.boot:spring-boot-starter-web:1.0.0.RC1") {
+    compile("org.springframework.boot:spring-boot-starter-web:1.0.0.RC4") {
         exclude module: "spring-boot-starter-tomcat"
     }
-    compile "org.springframework.boot:spring-boot-starter-jetty:1.0.0.RC1"
-    compile "org.springframework.boot:spring-boot-starter-actuator:1.0.0.RC1"
-    testCompile "org.codehaus.groovy:groovy-all:2.2.1"
+    compile "org.springframework.boot:spring-boot-starter-jetty:1.0.0.RC4"
+    compile "org.springframework.boot:spring-boot-starter-actuator:1.0.0.RC4"
+    testCompile "org.codehaus.groovy:groovy-all:2.2.2"
     testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.8'
+    gradleVersion = '1.11'
 }
